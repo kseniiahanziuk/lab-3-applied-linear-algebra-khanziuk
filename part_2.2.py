@@ -33,7 +33,7 @@ def recommend_movies(user_id, recommendations_number=10):
     recommendations = sorted_user_predictions.head(recommendations_number)
     movies_df = pd.read_csv('movies.csv')
     recommended_movies = movies_df[movies_df['movieId'].isin(recommendations.index)]
-    return recommended_movies[['Title', 'Genres']]
+    return recommended_movies[['title', 'genres']]
 
 
 user_id = 1
